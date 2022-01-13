@@ -9,7 +9,7 @@ export const FlexBox = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column;  
 `;
 
 export const GlobalStyle = createGlobalStyle`

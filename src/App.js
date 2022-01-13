@@ -20,6 +20,8 @@ import AdminPanel from "./components/AdminPanel";
 import UserProfile from "./components/UserProfile";
 import Trips from "./components/Trips";
 import Guide from "./components/Guide";
+import CreateTrip from "./components/CreateTrip";
+import CreateGuide from "./components/CreateGuide";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -84,7 +86,7 @@ function App() {
             path="/adminpanel"
             element={
               <FlexBox>
-                <AdminPanel />
+                <AdminPanel userInfo={userInfo} />
               </FlexBox>
             }
           />
@@ -109,6 +111,22 @@ function App() {
             element={
               <FlexBox>
                 <Guide />
+              </FlexBox>
+            }
+          />
+          <Route
+            path="/createtrip"
+            element={
+              <FlexBox>
+                <CreateTrip />
+              </FlexBox>
+            }
+          />
+          <Route
+            path="/createguide"
+            element={
+              <FlexBox>
+                <CreateGuide />
               </FlexBox>
             }
           />
