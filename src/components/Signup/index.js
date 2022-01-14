@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-
+// Router
+import { useNavigate } from "react-router-dom";
 // Facade
 import { facade } from "../../apiFacade";
-
 // Styles
 import Input from "../../styles/Input.styles";
 import Button from "../../styles/Button.styles";
 import ErrorText from "../../styles/Error.styles";
 import Container from "../../styles/Container.styles";
-
-// Router
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();

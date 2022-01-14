@@ -1,18 +1,15 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+//router
+import { useNavigate } from "react-router-dom";
 
 const NoMatch = () => {
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     navigate("/");
   });
-  
-  return (
-    <>
-    </>
-  );
+
+  return <></>;
 };
 
 export default NoMatch;

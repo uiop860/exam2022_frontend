@@ -1,21 +1,16 @@
-//libraries
 import { useState, useEffect } from "react";
-
 // Routing
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+// Facade
+import { facade } from "./apiFacade";
+// Styles
+import { BodyFlex, FlexBox, GlobalStyle } from "./GlobalStyle";
 // Components
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login/index";
 import Signup from "./components/Signup";
 import NoMatch from "./components/NoMatch";
-
-// Styles
-import { BodyFlex, FlexBox, GlobalStyle } from "./GlobalStyle";
-
-// Facade
-import { facade } from "./apiFacade";
 import AdminPanel from "./components/AdminPanel";
 import UserProfile from "./components/UserProfile";
 import Trips from "./components/Trips";

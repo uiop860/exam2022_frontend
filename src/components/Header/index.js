@@ -1,11 +1,8 @@
 import React from "react";
-
 // Routing
 import { NavLink, useNavigate } from "react-router-dom";
-
 // Facade
 import { facade } from "../../apiFacade";
-
 // Styles
 import { BlackBar, Content, Menu, Title, Line } from "./Header.styles";
 
@@ -25,8 +22,13 @@ function Header({ loggedIn, setLoggedIn, userInfo }) {
           <NavLink to="/">Exam2022</NavLink>
         </Title>
         <Menu>
-          <NavLink to="/trips">Trips</NavLink>
-          <Line />
+          {loggedIn && (
+            <>
+              <NavLink to="/trips">Trips</NavLink>
+              <Line />
+            </>
+          )}
+
           {!loggedIn ? (
             <>
               <NavLink to="/login">Login</NavLink>

@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+//router
 import { useParams } from "react-router-dom";
+//facade
 import { facade } from "../../apiFacade";
+//styles
 import Container from "../../styles/Container.styles";
 
 const Guide = () => {

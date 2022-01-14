@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+//router
+import { useNavigate } from "react-router-dom";
+//facade
+import { facade } from "../../apiFacade";
+//styles
 import Button from "../../styles/Button.styles";
 import Container from "../../styles/Container.styles";
 import Input from "../../styles/Input.styles";
-import { facade } from "../../apiFacade";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import ErrorText from "../../styles/Error.styles";
 
 const CreateTrip = () => {

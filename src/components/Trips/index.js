@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-//Router
+//router
 import { Link } from "react-router-dom";
-//Facade
+//facade
 import { facade } from "../../apiFacade";
-//Styles
+//styles
 import Button from "../../styles/Button.styles";
 import Container from "../../styles/Container.styles";
 import ErrorText from "../../styles/Error.styles";

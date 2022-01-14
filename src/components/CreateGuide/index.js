@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+//router
+import { useNavigate } from "react-router-dom";
+//facade
+import { facade } from "../../apiFacade";
+//styles
 import Button from "../../styles/Button.styles";
 import Container from "../../styles/Container.styles";
 import Input from "../../styles/Input.styles";
-import { facade } from "../../apiFacade";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import ErrorText from "../../styles/Error.styles";
 
 const CreateGuide = () => {
@@ -25,9 +27,9 @@ const CreateGuide = () => {
       .fetchAny("/guide/create", "POST", true, {
         name: trip.name,
         gender: trip.gender,
-        birthyear: trip.birthyear,
+        birthYear: trip.birthyear,
         profile: trip.profile,
-        imageurl: trip.imageurl,
+        imageUrl: trip.imageurl,
       })
       .then(() => {
         navigate("/adminpanel");

@@ -1,15 +1,14 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
-//Styles
+//router
+import { useNavigate } from "react-router-dom";
+//styles
+import Container from "../../styles/Container.styles";
 import FlexRow from "../../styles/FlexRow.styles";
 import Button from "../../styles/Button.styles";
-import { useNavigate } from "react-router-dom";
+//components
 import AdminTrips from "./AdminTrips";
-import Container from "../../styles/Container.styles";
 
-// Styles
-
-const AdminPanel = ({ userInfo }) => {
+const AdminPanel = () => {
   const navigate = useNavigate();
 
   const onClickGuide = (e) => {

@@ -1,13 +1,15 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
-import { facade } from "../../apiFacade";
-import Container from "../../styles/Container.styles";
-import Spinner from "../../styles/Spinner.styles";
+import React from "react";
 
 // Styles
 
 function Home() {
-  return <h1>Welcome</h1>;
+  return (
+    <>
+      <h1>Welcome</h1>
+      <h3>To login as user: username=user, password=user</h3>
+      <h3>To login as admin: username=admin, password=admin</h3>
+    </>
+  );
 }
 
 export default Home;
