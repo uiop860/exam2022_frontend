@@ -8,11 +8,13 @@ import Button from "../../styles/Button.styles";
 import Container from "../../styles/Container.styles";
 import Dropdown from "../../styles/Dropdown.styles";
 import FlexRow from "../../styles/FlexRow.styles";
+import ErrorText from "../../styles/Error.styles";
 
 const Trips = () => {
   const [trips, setTrips] = useState();
   const [guides, setGuides] = useState();
   const [updated, setUpdated] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
     facade
@@ -20,14 +22,18 @@ const Trips = () => {
       .then((data) => {
         setTrips(data);
       })
-      .catch(() => {});
+      .catch(() => {
+        setError("Something went wrong");
+      });
 
     facade
       .fetchAny("/guide/all", "GET", true)
       .then((data) => {
         setGuides(data);
       })
-      .catch(() => {});
+      .catch(() => {
+        setError("Something went wrong");
+      });
   }, [updated]);
 
   const onSelect = (e) => {
@@ -42,7 +48,9 @@ const Trips = () => {
       .then(() => {
         setUpdated(!updated);
       })
-      .catch(() => {});
+      .catch(() => {
+        setError("Something went wrong");
+      });
   };
 
   const onClickTrip = (e) => {
@@ -53,7 +61,9 @@ const Trips = () => {
       .then(() => {
         setUpdated(!updated);
       })
-      .catch(() => {});
+      .catch(() => {
+        setError("Something went wrong");
+      });
   };
 
   return (
@@ -71,20 +81,19 @@ const Trips = () => {
                 <h3>{x.guide.name}</h3>
               </Link>
             )}
+            {error && <ErrorText>{error}</ErrorText>}
             <FlexRow flexWrap="no-wrap" marginBottom="0">
               <Dropdown id={x.id} onChange={onSelect}>
                 <option hidden>Select guide</option>
                 {guides &&
                   guides.map((y) => (
-                    <>
-                      <option
-                        selected={x.guide && x.guide.name === y.name}
-                        key={y.id}
-                        value={y.id}
-                      >
-                        {y.name}
-                      </option>
-                    </>
+                    <option
+                      selected={x.guide && x.guide.name === y.name}
+                      key={y.id}
+                      value={y.id}
+                    >
+                      {y.name}
+                    </option>
                   ))}
               </Dropdown>
               <Button onClick={onClickTrip} id={x.id}>

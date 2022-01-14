@@ -9,9 +9,12 @@ const Guide = () => {
   const [guide, setGuide] = useState();
 
   useEffect(() => {
-    facade.fetchAny(`/guide/${id}`, "GET", true).then((data) => {
-      setGuide(data);
-    });
+    facade
+      .fetchAny(`/guide/${id}`, "GET", true)
+      .then((data) => {
+        setGuide(data);
+      })
+      .catch(() => {});
   }, []);
 
   return (

@@ -9,6 +9,7 @@ const Dropdown = styled.select`
   outline: 0;
   border: 0px solid #000000;
   border-radius: 5px;
+  height: 50px;
 
   background: hsl(var(--primary-color));
   color: #fff;

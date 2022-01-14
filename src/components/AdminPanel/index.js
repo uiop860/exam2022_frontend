@@ -1,11 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-//Components
-import Trips from "../Trips";
 //Styles
 import FlexRow from "../../styles/FlexRow.styles";
 import Button from "../../styles/Button.styles";
-import { facade } from "../../apiFacade";
 import { useNavigate } from "react-router-dom";
 import AdminTrips from "./AdminTrips";
 import Container from "../../styles/Container.styles";

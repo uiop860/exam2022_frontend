@@ -6,11 +6,13 @@ import { facade } from "../../apiFacade";
 //Styles
 import Button from "../../styles/Button.styles";
 import Container from "../../styles/Container.styles";
+import ErrorText from "../../styles/Error.styles";
 import FlexRow from "../../styles/FlexRow.styles";
 
 const Trips = ({ userInfo }) => {
   const [trips, setTrips] = useState();
   const [updated, setUpdated] = useState();
+  const [error, setError] = useState();
 
   useEffect(() => {
     facade.fetchAny("/trip/all", "GET", true).then((data) => {
@@ -29,7 +31,9 @@ const Trips = ({ userInfo }) => {
       .then(() => {
         setUpdated(!updated);
       })
-      .catch();
+      .catch(() => {
+        setError("Something went wrong");
+      });
   };
 
   const onClickRemove = (e) => {
@@ -43,7 +47,9 @@ const Trips = ({ userInfo }) => {
       .then(() => {
         setUpdated(!updated);
       })
-      .catch();
+      .catch(() => {
+        setError("Something went wrong");
+      });
   };
 
   return (
@@ -61,8 +67,9 @@ const Trips = ({ userInfo }) => {
                 <h3>{x.guide.name}</h3>
               </Link>
             )}
+            {error && <ErrorText>{error}</ErrorText>}
             {x.users &&
-            x.users.filter((x) => x.username === userInfo.username) ? (
+            x.users.some((y) => y.userName === userInfo.username) ? (
               <Button onClick={onClickRemove}>Remove trip</Button>
             ) : (
               <Button onClick={onClickAssign}>Assign</Button>
